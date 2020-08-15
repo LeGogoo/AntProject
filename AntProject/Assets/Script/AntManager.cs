@@ -22,6 +22,7 @@ public class AntManager : MonoBehaviour
     public Rigidbody antRigidbody;
     public List<Transform> CheckPointList = new List<Transform>();
     public Transform CheckPoint;
+    public UIManager uiManager;
 
     //下次控制旋转的时间
     private float m_rotateTime;
@@ -75,7 +76,8 @@ public class AntManager : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Resource"))
         {
-            Debug.Log(111);
+            uiManager.ActiveOneBox();
+            Destroy(other.gameObject);
             return;
         }
     }
