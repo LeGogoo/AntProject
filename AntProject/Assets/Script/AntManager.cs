@@ -23,6 +23,7 @@ public class AntManager : MonoBehaviour
     public List<Transform> CheckPointList = new List<Transform>();
     public Transform CheckPoint;
     public UIManager uiManager;
+    public AwardManager awardManager;
 
     //下次控制旋转的时间
     private float m_rotateTime;
@@ -60,8 +61,26 @@ public class AntManager : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
             ContactPoint contact = collision.contacts[0];
-            var dis = AntTrans.forward + contact.normal;
-            m_curVelocity = (contact.normal + dis).normalized * velocity;
+
+            Vector3 realnormal;
+            realnormal = contact.normal;
+            if (contact.normal.x > 0)
+            {
+                realnormal.x = Mathf.Abs(AntTrans.forward.x);
+            }
+            else if (contact.normal.x < 0)
+            {
+                realnormal.x = -Mathf.Abs(AntTrans.forward.x);
+            }
+            else if (contact.normal.z > 0)
+            {
+                realnormal.z = Mathf.Abs(AntTrans.forward.z);
+            }
+            else if (contact.normal.z < 0)
+            {
+                realnormal.z = -Mathf.Abs(AntTrans.forward.z);
+            }
+            m_curVelocity = (AntTrans.forward + realnormal * 2).normalized * velocity;
             Vector3 lookAtPosition = AntTrans.position + m_curVelocity;
             AntTrans.LookAt(lookAtPosition);
             return;
@@ -77,7 +96,7 @@ public class AntManager : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Resource"))
         {
             uiManager.ActiveOneBox();
-            Destroy(other.gameObject);
+            awardManager.CreatAward(other.gameObject);
             return;
         }
     }

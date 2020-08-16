@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     public RectTransform rectTransform;
     public GameObject box;
+    public Transform boxListTrans;
 
     public List<List<GameObject>> boxList0;
     public List<GameObject> boxList1;
@@ -41,7 +42,7 @@ public class UIManager : MonoBehaviour
             for (int i = 0; i < lengthSize; i++)
             {
                 var newGameObject = Instantiate(box);
-                newGameObject.transform.SetParent(transform);
+                newGameObject.transform.SetParent(boxListTrans);
                 newGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(m_boxLength, m_boxHeight);
                 newGameObject.GetComponent<RectTransform>().localPosition = startPosition + new Vector2(i * m_boxLength, j * m_boxHeight);
                 newGameObject.SetActive(false);
