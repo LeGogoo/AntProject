@@ -11536,6 +11536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045140780}
+  - component: {fileID: 2045140781}
   m_Layer: 0
   m_Name: Resource
   m_TagString: Untagged
@@ -11582,6 +11583,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2045140781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045140779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f1dbb89909686428623b856631f71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCount: 2
+  awardList:
+  - {fileID: 147291570}
+  - {fileID: 306707637}
+  - {fileID: 1507846531}
+  - {fileID: 1678652260}
+  - {fileID: 1902700542}
+  - {fileID: 1825277185}
+  - {fileID: 1144983439}
+  - {fileID: 1514064933}
+  - {fileID: 587091519}
+  - {fileID: 664996373}
+  - {fileID: 1497195684}
+  - {fileID: 1054326219}
+  - {fileID: 1737365853}
+  - {fileID: 1146636478}
+  - {fileID: 1703794519}
+  - {fileID: 1556351453}
+  - {fileID: 1887761259}
+  - {fileID: 566333769}
+  - {fileID: 1611198772}
+  - {fileID: 1995423158}
+  - {fileID: 773685975}
+  - {fileID: 1449132205}
+  - {fileID: 1915773779}
+  - {fileID: 1758428242}
+  - {fileID: 1758941310}
 --- !u!1 &2049160980
 GameObject:
   m_ObjectHideFlags: 0
@@ -12194,6 +12234,11 @@ PrefabInstance:
       propertyPath: rotateVelocity
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7092510431035477107, guid: f9d16e9a636244d428f14bf78097b8a0,
+        type: 3}
+      propertyPath: awardManager
+      value: 
+      objectReference: {fileID: 2045140781}
     - target: {fileID: 7092510431035477108, guid: f9d16e9a636244d428f14bf78097b8a0,
         type: 3}
       propertyPath: m_LocalPosition.x
